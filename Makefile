@@ -1,4 +1,7 @@
 all:
-	pdflatex book.tex
+	pdflatex -interaction=batchmode --jobname=AnonymousHandbook book.tex
+	bibtex AnonymousHandbook
+	-pdflatex -interaction=batchmode --jobname=AnonymousHandbook book.tex
+	-pdflatex -interaction=batchmode --jobname=AnonymousHandbook book.tex
 clean:
-	rm -rf book.out book.aux book.log book.toc
+	rm -rf AnonymousHandbook.out AnonymousHandbook.aux AnonymousHandbook.log AnonymousHandbook.toc AnonymousHandbook.blg AnonymousHandbook.bbl
