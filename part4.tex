@@ -1,5 +1,7 @@
 \chapter{Технические методы}
+\begin{important}
 Не стоит забывать, что следующие методы необходимо использовать, по возможности, совместно друг с другом и с методами, перечисленными в предыдущей главе.
+\end{important}
 \section{Прокси}
 
 \section{VPN}
@@ -20,7 +22,7 @@
 \subsubsection{User Agent Changer}
 
 \section{Анонимные оверлейные сети}
-Оверлейные сети --- это такие сети, которые работают поверх другой уже работающей сети.
+\textbf{Оверлейные сети} --- это такие сети, которые работают поверх другой уже работающей сети.
 \subsection{Tor}
 \begin{wrapfigure}[8]{r}{0.25\linewidth}
 \includegraphics[width=\linewidth]{Tor}
@@ -31,6 +33,9 @@
 \subsubsection{Установка}
 \subsubsection{Использование}
 \subsubsection{Недостатки}
+\begin{important}
+Не забывайте, что при использовании обычного Интернета через Tor, последняя нода в цепочке (exit-нода) видит трафик нешифрованным.
+\end{important}
 \subsection{I2P}
 \begin{wrapfigure}[6]{r}{0.25\linewidth}
 \includegraphics[width=\linewidth]{I2P}
@@ -42,6 +47,13 @@
 \subsubsection{Использование}
 \subsubsection{Недостатки}
 \subsection{Freenet}
+\begin{wrapfigure}[9]{r}{0.25\linewidth}
+\includegraphics[width=\linewidth]{Freenet}
+\caption{Логотип Freenet}
+\end{wrapfigure}
+\textbf{Freenet} --- анонимная оверлейная сеть, использующая принципы P2P и F2F и распространяющаяся на условиях GNU GPL v2\cite{freenet_license}. В отличии от Tor и I2P, позволяющих размещать любые ресурсы внутри сети, Freenet по сути представляет собой хранилище статичных данных.\\
+\textbf{P2P (Peer-to-peer)} --- компьютерная сеть, в которой все участники равны и выполняют одновременно роль как клиента, так и сервера.\\
+\textbf{F2F (Friend-to-Friend)} --- разновидность P2P-сети, в которой все соединения разрешаются только с доверенными узлами.
 \subsubsection{Установка}
 \subsubsection{Использование}
 \subsubsection{Недостатки}

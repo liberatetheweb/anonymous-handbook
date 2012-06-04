@@ -9,11 +9,45 @@
 \usepackage{xltxtra}
 \usepackage{polyglossia}
 \usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor,mdframed}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{mauve}{rgb}{0.58,0,0.82} 
+\lstset{ %
+  language=bash,
+  backgroundcolor=\color{white},
+  frame=single,
+  rulecolor=\color{black},
+  tabsize=2,
+  breaklines=true,
+  breakatwhitespace=true, 
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve} 
+}
+\newenvironment{important}[1][]{%
+   \begin{mdframed}[%
+      backgroundcolor={red!15}, hidealllines=true,
+      skipabove=0.7\baselineskip, skipbelow=0.7\baselineskip,
+      splitbottomskip=2pt, splittopskip=4pt, #1]%
+   \makebox[0pt]{% ignore the withd of !
+      \smash{% ignor the height of !
+         \fontsize{32pt}{32pt}\selectfont% make the ! bigger
+         \hspace*{-19pt}% move ! to the left
+         \raisebox{-2pt}{% move ! up a little
+            {\color{red!70!black}\sffamily\bfseries !}% type the bold red !
+         }%
+      }%
+   }%
+}{\end{mdframed}}
 \defaultfontfeatures{Mapping=tex-text}
 \setmainfont{Liberation Serif}
 \setmonofont{Liberation Mono}
+\setsansfont{Liberation Sans}
 \setdefaultlanguage[spelling=modern]{russian}
 \setotherlanguage{english}
+%%\newfontfamily\cyrillicfont{Liberation Serif}
 \setcounter{tocdepth}{3}
 \graphicspath{{images/}}
 \begin{document}
