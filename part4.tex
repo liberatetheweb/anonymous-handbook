@@ -10,6 +10,9 @@
 
 \section{Настойка браузера Firefox}
 \subsection{Подмена информации, передаваемой браузером}
+\begin{important}
+Браузер передает огромное количество информации. По отдельности эта информация не представляет никакого интереса, но собранная вместе она может позволить практически со 100\% вероятностью установить вашу личность.
+\end{important}
 \subsubsection{User-agent}
 \subsubsection{Часовой пояс}
 \subsubsection{Предпочитаемые языки}
@@ -24,7 +27,7 @@
 \section{Анонимные оверлейные сети}
 \textbf{Оверлейные сети} --- это такие сети, которые работают поверх другой уже работающей сети.
 \subsection{Tor}
-\begin{wrapfigure}[8]{r}{0.25\linewidth}
+\begin{wrapfigure}[9]{r}{0.25\linewidth}
 \includegraphics[width=\linewidth]{Tor}
 \caption{Логотип Tor}
 \end{wrapfigure}
@@ -90,8 +93,61 @@
 \subsection{GPG м любая другая передаваемая информация}
 
 \section{Стеганография}
+\textbf{Стеганография} --- способ тайной передачи информации путем сохранения в тайне самого факта передачи информации. Чаще всего используется совместно с криптографическими методами.
+
 \subsection{steghide}
+\begin{figure}[ht!]
+\vspace{-4ex}
+\centering
+\subfigure[]{
+\includegraphics[width=0.25\linewidth]{steghide1}
+\label{fig:steghide1}
+}
+\hspace{4ex}
+\subfigure[]{
+\includegraphics[width=0.25\linewidth]{steghide2}
+\label{fig:steghide2}
+}
+\hspace{4ex}
+\subfigure[]{
+\includegraphics[width=0.25\linewidth]{steghide3}
+\label{fig:steghide3}
+}
+\caption{Использование steghide: 
+\subref{fig:steghide1} исходное изображение; 
+\subref{fig:steghide2} в изображении закодирована фраза <<Feci quod potui, faciant meliora potentes>> с паролем <<cogitoergosum>>; 
+\subref{fig:steghide3}} разница между изображениями.
+\end{figure}
+\subsubsection{Установка}
+\subsubsection{Использование}
+Вставка данных в изображение:
+\begin{lstlisting}
+steghide embed -cf "coverfile.jpg" -ef "embedfile.txt" -sf "stegofile.jpg" -p "password"
+\end{lstlisting}
+coverfile.jpg --- файл, в который вставляются данные.\\
+embedfile.txt --- файл, который вставляется в изображение.\\
+stegofile.jpg --- файл со вставленным изображением.\\
+password --- пароль.\\\\
+Извлечение данных:
+\begin{lstlisting}
+steghide extract -sf "stegofile.jpg" -p "password" -xf "extractfile.txt"
+\end{lstlisting}
+stegofile.jpg --- файл со вставленным изображением.\\
+password --- пароль.\\
+extractfile.txt --- файл, в который нужно записать извлеченные данные.
+\subsubsection{Недостатки}
+\newpage
 \subsection{OpenStego}
+\begin{figure}[h]
+\center{\includegraphics[width=0.75\linewidth]{openstego}}
+\caption{Интерфейс OpenStego}
+\end{figure}
+\subsection{Желтые точки}
+\begin{wrapfigure}[9]{r}{0.25\linewidth}
+\includegraphics[width=\linewidth]{dots}
+\caption{Желтые точки. Изображение: Parhamr}
+\end{wrapfigure}
+При печати материалов (например, листовок) не стоит забывать, что многие принтеры кодируют микроточками информацию о времени печати и о серийном номере принтера \cite{eff_dots}. Данная информация может быть использована для установления личности авторов отпечатков. Список принтеров, размещающих и не размещающих желтые точки смотрите в отчете Electronic Frontier Foundation\cite{eff_list}.
 
 \section{Альтернативные DNS}
 \subsection{Namecoin}
