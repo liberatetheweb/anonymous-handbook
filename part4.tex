@@ -18,14 +18,22 @@
 \subsubsection{Предпочитаемые языки}
 \subsection{Дополнения}
 \subsubsection{HTTPS Everywhere}
-\textbf{HTTPS Everywhere} --- дополнение для браузеров Firefox и Chrome/Chromium, переадресующее на HTTPS версию сайта, если она доступна. Это позволяет защититься от перехвата передаваемых данных, но не позволяет скрыть сам факт посещения вебсайта. Скачать дополнение можно тут \url{https://eff.org/https-everywhere}.
+HTTPS Everywhere --- дополнение для браузеров Firefox и Chrome/Chromium, переадресующее на HTTPS версию сайта, если она доступна. Это позволяет защититься от перехвата передаваемых данных, но не позволяет скрыть сам факт посещения вебсайта. Скачать дополнение можно тут \url{https://eff.org/https-everywhere}.
 \subsubsection{BetterPrivacy}
+BetterPrivacy --- дополнение для браузера Firefox, позволяющее удалять флеш-куки (Local Shared Objects). Это небольшие куски данных, которые Adobe Flash может сохранять на компьютерах. Ссылка: \url{https://addons.mozilla.org/firefox/addon/betterprivacy/}.
 \subsubsection{Ghostery}
+Ghostery --- дополнение для браузера Firefox, позволяющее блокировать скрипты, невидимые изображения и прочие методы, используемые многими компаниями для слежки за пользователями. Работает и с LSO, может заменить BetterPrivacy. Сайт: \url{https://www.ghostery.com}.
 \subsubsection{TrackerBlock}
+TrackerBlock --- дополнение, аналогичное по функционалу Ghostery, но помимо Firefox доступное и для браузеров Chrome/Chromium и Internet Explorer. Сайт: \url{http://privacychoice.org/trackerblock}.
 \subsubsection{Beef Taco}
-\subsubsection{User Agent Changer}
+Beef Taco --- дополнение для браузера Firefox, позволяющее блокировать куки ресурсов, шпионящих за пользователями. Сайт: \url{http://jmhobbs.github.com/beef-taco/}.
+\subsubsection{User Agent Switcher}
+User Agent Switcher --- дополнение для браузера Firefox, позволяющее менять заголовок User-Agent, передаваемый браузером. Сайт: \url{http://chrispederick.com/work/user-agent-switcher/}. Вы можете скачать дополнительный список User-Agent здесь \url{http://techpatterns.com/forums/about304.html} и импортировать его в дополнение.
 
 \section{Анонимные оверлейные сети}
+\begin{important}
+Никогда не используйте анонимные сети с настройками, которые позволяют использовать Интернет в одном браузере в обход самой сети. В этом случае будет достаточно вставить любое изображение из внешнего Интернета, чтобы получить ваш реальный IP-адрес.
+\end{important}
 \textbf{Оверлейные сети} --- это такие сети, которые работают поверх другой уже работающей сети.
 \subsection{Tor}
 \begin{wrapfigure}[9]{r}{0.25\linewidth}
@@ -220,5 +228,10 @@ extractfile.txt --- файл, в который нужно записать из
 
 \section{Альтернативные DNS}
 \subsection{Namecoin}
+\textbf{Namecoin} --- распределенная система доменных имен, основанная на Bitcoin, хранящая в блоках информацию о доменах. Она сохранила многие плюсы Bitcoin, например, никто не может заблокировать ни один домен. В настоящее время возможно получение доменов в зоне .bit, однако воспользоваться ими смогут только те, кто предварительно настроил свой компьютер.
+\subsubsection{Установка}
+Для установки посетите \url{http://dot-bit.org} или установите пакет с помощью пакетного менеджера вашего дистрибутива.
+\subsubsection{Использование}
+\subsubsection{Недостатки}
 \subsection{OpenNIC}
 \subsection{Собственный кеширующий DNS сервер}
