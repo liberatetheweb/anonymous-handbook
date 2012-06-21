@@ -362,3 +362,23 @@ StegoShare специально приспособлен для того, что
 \textbf{KWallet} --- кроссплатфоменный менеджер паролей, разрабатывающийся в рамках проекта KDE. Сайт: \url{http://utils.kde.org/projects/kwalletmanager/}.
 \subsection{Revelation}
 \textbf{Revelation} --- менеджер паролей для GNU/Linux и *BSD. Сайт: \url{http://revelation.olasagasti.info}.
+
+\section{Безопасное удаление файлов}
+\begin{important}
+Простое удаление файлов оставляет возможность для восстановления, так как файлы на самом деле никуда не исчезают, а просто помечаются как удаленные и на этот сектор диска становится возможна запись.
+\end{important}
+\subsection{shred}
+\textbf{shred} --- утилита из пакета GNU coreutils, позволяющая переписывать указанные файлы несколько раз, что делает практически невозможным их восстановление. Сайт GNU coreutils: \url{http://www.gnu.org/software/coreutils}.
+\subsubsection{Использование}
+\begin{lstlisting}
+shred -u "файл"
+\end{lstlisting}
+\subsubsection{shreg}
+shreg --- графический интерфейс для shred. Сайт: \url{https://github.com/arxell/shreg}.
+\subsection{wipe}
+\textbf{wipe} --- аналогичная утилита для UNIX-подобных систем, работающая по тому же принципу. Сайт: \url{http://lambda-diode.com/software/wipe/}.
+\subsubsection{Использование}
+\begin{lstlisting}
+wipe "файл"
+\end{lstlisting}
+
