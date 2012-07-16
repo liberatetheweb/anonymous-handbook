@@ -2,19 +2,66 @@
 \begin{important}
 Не стоит забывать, что следующие методы необходимо использовать, по возможности, совместно друг с другом и с методами, перечисленными в предыдущей главе.
 \end{important}
+
 \section{Прокси}
+\begin{important}
+Не забывайте, что хозяева прокси-серверов и анонимайзеров видят трафик нешифрованным.
+\end{important}
+\begin{important}
+Некоторые прокси-сервера передают заголовок X-Forwarded-For с реальным IP-адресом клиента.
+\end{important}
+\textbf{Прокси-сервер} --- сервер, который позволяет пропускать через себя пользовательский трафик.\\
+Для использования прокси просто задайте его адрес в настройках браузера и других приложений, трафик которых вы хотите пропускать через прокси.
+\subsection{Списки открытых прокси}
+\begin{enumerate}
+\item \url{http://xroxy.com}
+\item \url{https://hidemyass.com/proxy-list}
+\item \url{http://freeproxy.ch}
+\item \url{http://proxylists.net}
+\item \url{http://nntime.com}
+\end{enumerate}
+
+\section{Веб-прокси}
+\textbf{Веб-прокси}) --- веб-страница, которая позволяет пользователю получить контент с заданного адреса через себя.\\
+Для использования веб-прокси, перейдите на его страницу и введите адрес сайта, который вы хотете посетить.
+\subsection{Некоторые веб-прокси}
+\begin{enumerate}
+\item \url{https://hidemyass.com}
+\item \url{http://anonymouse.org}
+\item \url{http://hide.pl}
+\item \url{http://hideme.ru}
+\item \url{http://guardster.com/free/}
+\end{enumerate}
 
 \section{VPN}
+\begin{important}
+Не забывайте, что хозяин VPN-сервиса видит трафик нешифрованным.
+\end{important}
+\textbf{VPN} --- технология, позволяющая создавать сети поверх существующего Интернет-подключения. Из-за высокой скорости работы, простоты настройки и шифрования трафика от клиента до VPN-провайдера часто используется как средство сокрытия реального IP-адреса при доступе в Интернет. VPN-провайдеры обычно предоставляют свои услуги на платной основе.
+\subsection{Некоторые VPN-провайдеры}
+\begin{enumerate}
+\item \url{https://ipredator.se}
+\item \url{https://kebrum.com}
+\item \url{https://relakks.com}
+\item \url{https://vpntunnel.se}
+\item \url{http://ivacy.com}
+\end{enumerate}
 
 \section{SSH-туннели}
 
-\section{Настойка браузера}
+\section{Настройка браузера}
 \begin{important}
 Браузер передает огромное количество информации. По отдельности эта информация не представляет никакого интереса, но собранная вместе она может позволить практически со 100\% вероятностью установить вашу личность.
 \end{important}
 \subsection{Настройка браузера Firefox}
 \subsubsection{Предпочитаемые языки}
 В меню <<Настройки>> \textrightarrow <<Содержимое>> \textrightarrow <<Языки>> удалите из списка все языки, кроме английского. Несмотря на то, что многие сайты будут теперь использовать по умолчанию английский язык, это повысит вашу анонимность, так ваш браузер станет менее уникальным.
+\subsection{Шрифты}
+По умолчанию Firefox передает список установленных шрифтов. Это может повысить уникальность вашего браузера, что отрицательно скажется на анонимности. Для отключения этого в about:config нужно поменять значение browser.display.use\_document\_fonts на 0.
+\subsection{Local storage}
+По умолчанию в Firefox включен Local storage и браузеру присвоен уникальный ID. Также страницы могут записывать в него свою информацию. Отключить Local storage можно изменением в about:config значения dom.storage.enabled на false.
+\subsection{Кеш}
+Для того, чтобы скрыть факт повторного посещения страницы, необходимо отключить кеш. Измените в about:config значения browser.cache.disk.enable и browser.cache.memory.enable на false.
 \subsection{Дополнения}
 \subsubsection{HTTPS Everywhere}
 HTTPS Everywhere --- дополнение для браузеров Firefox и Chrome/Chromium, переадресующее на HTTPS версию сайта, если она доступна. Это позволяет защититься от перехвата передаваемых данных, но не позволяет скрыть сам факт посещения вебсайта. Скачать дополнение можно тут \url{https://eff.org/https-everywhere}.
@@ -36,6 +83,8 @@ TrackMeNot --- дополнение для браузеров Firefox и Chrome/
 NoScript --- дополнение для браузера Firefox, позволяющее блокировать JavaScript, Flash, Java и другие элементы на недоверенных сайтах. Сайт: \url{http://noscript.net}.
 \subsubsection{RequestPolicy}
 RequestPolicy --- дополнение для браузера Firefox, позволяющее защититься от подделки межсайтовых запросов. Сайт: \url{https://requestpolicy.com}.
+\subsection{Плагины}
+Сам факт наличия каких-либо редкоиспользуемых плагинов увеличивает уникальность вашего браузера. Также некоторые плагины, например Java, передают ваш настоящий IP адрес, даже если вы за прокси.
 
 \section{Анонимные оверлейные сети}
 \begin{important}
@@ -52,6 +101,9 @@ RequestPolicy --- дополнение для браузера Firefox, позв
 \subsubsection{Установка}
 Для установки посетите \url{https://torproject.org} или установите пакет с помощью пакетного менеджера вашего дистрибутива.
 \subsubsection{Использование}
+Самым простым способом использования Tor является установка Tor Browser Bundle. Просто скачайте его с \url{https://torproject.org/projects/torbrowser.html}, распакуйте и запустите.\\
+Вы также можете установить Tor и задать в настройках приложений, которые вы хотите через него использовать, адрес socks5-прокси 127.0.0.1:9050.\\
+Для использования приложений через Tor, не имеющих настроек прокси, скачайте torsocks --- \url{https://code.google.com/p/torsocks}.
 \subsubsection{Недостатки}
 \begin{important}
 Не забывайте, что при использовании обычного Интернета через Tor, последняя нода в цепочке (exit-нода) видит трафик нешифрованным.
@@ -112,6 +164,11 @@ http://3i2rcjcis3fmy2ylj356qko2eaj5dx5pxlsqc6wqyeirod5uzwzq.b32.i2p/hosts.txt
 Для установки посетите \url{https://freenetproject.org} или установите пакет с помощью пакетного менеджера вашего дистрибутива.
 \subsubsection{Использование}
 \subsubsection{Недостатки}
+\begin{enumerate}
+\item Низкая скорость доступа.
+\item Требуется наличие большого количества свободного места на жестком диске.
+\item Все сайты представляют собой статичные страницы.
+\end{enumerate}
 
 \section{Анонимный файлообмен}
 \subsection{I2Phex}
@@ -390,4 +447,13 @@ shreg --- графический интерфейс для shred. Сайт: \url
 \begin{lstlisting}
 wipe "файл"
 \end{lstlisting}
-
+\section{Метаданные}
+\begin{important}
+В метаданных может храниться огромное количество информации о создателе файла.
+\end{important}
+\subsection{mat}
+\textbf{mat} --- утилита, позволяющая удалять метаданные из файлов png, jpg, Open Document Format (.odt, .odx, .ods, ...), MS Office OpenXML (.docx, .pptx, .xlsx, ...), pdf, tar, zip, mp3, mp2, mp1, mpa, ogg, flac, torrent. Сайт: \url{https://mat.boum.org}.
+\subsubsection{Использование}
+\begin{lstlisting}
+mat "файл"
+\end{lstlisting}
