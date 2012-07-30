@@ -14,6 +14,8 @@
 \usepackage{xcolor,mdframed}
 \usepackage{subfigure}
 \usepackage{textcomp}
+\usepackage{multibib}
+\newcites{further}{Дальнейшее чтение}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{mauve}{rgb}{0.58,0,0.82} 
 \lstset{ %
@@ -67,8 +69,14 @@
 \input{./part5.tex}
 \input{./part6.tex}
 \input{./part7.tex}
-\input{./part8.tex}
-\input{./part9.tex}
+
+\newpage
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Дальнейшее чтение}
+\bibliographystylefurther{gost2008}
+\nocitefurther{*}
+\bibliographyfurther{further}
 
 \newpage
 \bibliographystyle{gost2008}

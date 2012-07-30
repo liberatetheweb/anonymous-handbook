@@ -48,6 +48,24 @@
 \end{enumerate}
 
 \section{SSH-туннели}
+\textbf{SSH} --- протокол, созданный для безопасной передачи данных. Часто используется для удаленного управления другими компьютерами, но может использоваться и для создания туннелей.\\
+\textbf{SSH-туннель} --- туннель, созданный с помощью SSH-соединения и используемый для передачи данных. Существуют организации, предоставляющие SSH-туннелирование на платной основе.
+\subsection{Использование}
+\begin{lstlisting}
+ssh -D localhost:port login@address
+\end{lstlisting}
+port --- порт, трафик на который будет пропускаться через SSH-туннель.\\
+login --- ваш логин на удаленном сервере.\\
+address --- адрес удаленного сервера.\\
+После этого установите в приложениях, трафик которых вы хотите туннелировать, например, в браузере, адрес SOCKS-прокси localhost с портом, который вы указали в предыдущем шаге.
+\subsection{Некоторые провайдеры SSH-туннелей}
+\begin{enumerate}
+\item \url{https://tunnelr.com}
+\item \url{http://torvpn.com}
+\item \url{http://vpnsecure.me}
+\item \url{http://guardster.com}
+\item \url{http://anonyproz.com}
+\end{enumerate}
 
 \section{Настройка браузера}
 \begin{important}
@@ -55,13 +73,15 @@
 \end{important}
 \subsection{Настройка браузера Firefox}
 \subsubsection{Предпочитаемые языки}
-В меню <<Настройки>> \textrightarrow <<Содержимое>> \textrightarrow <<Языки>> удалите из списка все языки, кроме английского. Несмотря на то, что многие сайты будут теперь использовать по умолчанию английский язык, это повысит вашу анонимность, так ваш браузер станет менее уникальным.
-\subsection{Шрифты}
+В меню <<Настройки>> \textrightarrow <<Содержимое>> \textrightarrow <<Языки>> удалите из списка все языки, кроме английского. Порядок должен быть en-us, затем en. Несмотря на то, что многие сайты будут теперь использовать по умолчанию английский язык, это повысит вашу анонимность, так ваш браузер станет менее уникальным.
+\subsubsection{Шрифты}
 По умолчанию Firefox передает список установленных шрифтов. Это может повысить уникальность вашего браузера, что отрицательно скажется на анонимности. Для отключения этого в about:config нужно поменять значение browser.display.use\_document\_fonts на 0.
-\subsection{Local storage}
+\subsubsection{Local storage}
 По умолчанию в Firefox включен Local storage и браузеру присвоен уникальный ID. Также страницы могут записывать в него свою информацию. Отключить Local storage можно изменением в about:config значения dom.storage.enabled на false.
-\subsection{Кеш}
+\subsubsection{Кеш}
 Для того, чтобы скрыть факт повторного посещения страницы, необходимо отключить кеш. Измените в about:config значения browser.cache.disk.enable и browser.cache.memory.enable на false.
+\subsubsection{DNS-запросы через SOCKS5 прокси}
+По умолчанию Firefox делает DNS-запросы в обход SOCKS5-прокси (например, при использовании Tor), что может помочь установить провайдеру, какие сайты вы посещали. Измените значение network.proxy.socks\_remote\_dns на true.
 \subsection{Дополнения}
 \subsubsection{HTTPS Everywhere}
 HTTPS Everywhere --- дополнение для браузеров Firefox и Chrome/Chromium, переадресующее на HTTPS версию сайта, если она доступна. Это позволяет защититься от перехвата передаваемых данных, но не позволяет скрыть сам факт посещения вебсайта. Скачать дополнение можно тут \url{https://eff.org/https-everywhere}.
@@ -163,12 +183,18 @@ http://3i2rcjcis3fmy2ylj356qko2eaj5dx5pxlsqc6wqyeirod5uzwzq.b32.i2p/hosts.txt
 \subsubsection{Установка}
 Для установки посетите \url{https://freenetproject.org} или установите пакет с помощью пакетного менеджера вашего дистрибутива.
 \subsubsection{Использование}
+Запустите Freenet и откройте в браузере страницу \url{http://127.0.0.1:8888}.
 \subsubsection{Недостатки}
 \begin{enumerate}
 \item Низкая скорость доступа.
-\item Требуется наличие большого количества свободного места на жестком диске.
+\item Требуется наличие некоторого количества свободного места на жестком диске.
 \item Все сайты представляют собой статичные страницы.
 \end{enumerate}
+\subsection{GNUnet}
+\begin{wrapfigure}[9]{r}{0.25\linewidth}
+\includegraphics[width=\linewidth]{GNUnet}
+\caption{Логотип GNUnet}
+\end{wrapfigure}
 
 \section{Анонимный файлообмен}
 \subsection{I2Phex}
@@ -253,11 +279,15 @@ Bitcoin в экономическом плане напонимает золот
 
 \section{Шифрование данных}
 \subsection{Truecrypt}
+\textbf{Truecrypt} --- кроссплатформенное приложение для шифрования данных на лету. Позволяет шифровать как запоминающие устройства, так и создавать контейнеры для хранения шифрованных данных. Имеет возможность создания скрытых томов --- к одному контейнеру можно получить доступ с помощью двух ключей, один из которых вы можете назвать, если к вам будет применено насилие, не раскрыв при этом содержимого секретного тома.
 \subsubsection{Установка}
 Для установки посетите \url{http://truecrypt.org} или установите пакет с помощью пакетного менеджера вашего дистрибутива.
 \subsubsection{Использование}
 \subsubsection{Недостатки}
 \subsection{dm-crypt}
+\textbf{dm-crypt} --- подсистема прозрачного шифрования в Linux и DragonFly BSD. Позволяет шифровать на лету блочные устройства. В Windows доступ к шифрованным dm-crypt данным можно получить с помощью FreeOTFE (\url{http://freeotfe.org}).
+\subsubsection{Установка}
+Хоть dm-crypt и является частью ядра и его использование возможно без установки дополнительных утилит, все же для удобства лучше установить пакеты cryptsetup (\url{https://code.google.com/p/cryptsetup}) и cryptmount (\url{http://cryptmount.sourceforge.net}).
 \subsubsection{Использование}
 \subsubsection{Недостатки}
 \subsection{eCryptfs}
