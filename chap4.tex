@@ -72,16 +72,27 @@ address --- адрес удаленного сервера.\\
 Браузер передает огромное количество информации. По отдельности эта информация не представляет никакого интереса, но собранная вместе она может позволить практически со 100\% вероятностью установить вашу личность.
 \end{important}
 \subsection{Настройка браузера Firefox}
+Для изменения настроек можно использовать специальную страницу \textit{about:config} или добавлять их напрямую в файл настроек \textit{prefs.js}, находящийся в папке профиля. Некоторые полезные настройки доступны через стандартное меню настроек
 \subsubsection{Предпочитаемые языки}
 В меню <<Настройки>> \textrightarrow <<Содержимое>> \textrightarrow <<Языки>> удалите из списка все языки, кроме английского. Порядок должен быть en-us, затем en. Несмотря на то, что многие сайты будут теперь использовать по умолчанию английский язык, это повысит вашу анонимность, так ваш браузер станет менее уникальным.
 \subsubsection{Шрифты}
-По умолчанию Firefox передает список установленных шрифтов. Это может повысить уникальность вашего браузера, что отрицательно скажется на анонимности. Для отключения этого в about:config нужно поменять значение browser.display.use\_document\_fonts на 0.
+По умолчанию Firefox передает список установленных шрифтов. Это может повысить уникальность вашего браузера, что отрицательно скажется на анонимности. Для отключения этого в \textit{about:config} нужно поменять значение \textit{browser.display.use\_document\_fonts} на 0.
 \subsubsection{Local storage}
-По умолчанию в Firefox включен Local storage и браузеру присвоен уникальный ID. Также страницы могут записывать в него свою информацию. Отключить Local storage можно изменением в about:config значения dom.storage.enabled на false.
+По умолчанию в Firefox включен Local storage и браузеру присвоен уникальный ID. Также страницы могут записывать в него свою информацию. Отключить Local storage можно изменением в \textit{about:config} значения \textit{dom.storage.enabled} на \textit{false}.
 \subsubsection{Кеш}
-Для того, чтобы скрыть факт повторного посещения страницы, необходимо отключить кеш. Измените в about:config значения browser.cache.disk.enable и browser.cache.memory.enable на false.
+Для того, чтобы скрыть факт повторного посещения страницы, необходимо отключить кеш. Измените в \textit{about:config} значения \textit{browser.cache.disk.enable} и \textit{browser.cache.memory.enable} на \textit{false}.
 \subsubsection{DNS-запросы через SOCKS5 прокси}
-По умолчанию Firefox делает DNS-запросы в обход SOCKS5-прокси (например, при использовании Tor), что может помочь установить провайдеру, какие сайты вы посещали. Измените значение network.proxy.socks\_remote\_dns на true.
+По умолчанию Firefox делает DNS-запросы в обход SOCKS5-прокси (например, при использовании Tor), что может помочь установить провайдеру, какие сайты вы посещали. Измените значение \textit{network.proxy.socks\_remote\_dns} на \textit{true}.
+\subsubsection{Передача информации о посещенных сайтах}
+Установите значение \textit{browser.safebrowsing.enabled} в \textit{false} и \textit{browser.safebrowsing.malware.enabled} в \textit{false} для тключения передачи информации о посещаемых веб-сайтах (система для борьбы с фишингом).
+\subsubsection{Подмена User Agent}
+Заменить значение User Agent можно и без расширений. Для этого существует параметр \textit{general.useragent.override}, установите его значение, например, в  \textit{<<Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.7) Gecko/200091221 Firefox/3.5.7>>}. Если выставить наиболее распространённое значение, то это поможет снизить уникальность пользователя.
+\subsubsection{Запрет Cookie для сторонних сайтов}
+Установите значение \textit{network.cookie.cookieBehavior} в 1 для запрета Cookies для сторонних сайтов.
+\subsubsection{Запрет на передачу заголовка HTTP referer}
+Установите значение item \textit{network.http.sendRefererHeader} в  0 для отключения передачи заголовка HTTP referer для обычного соединения, и значение  \textit{network.http.sendSecureXSiteReferrer} в 0 для отключения передачи для зашифрованного соединения.
+\subsubsection{Отключение Java}
+Для отключения Java установите значение \textit{security.enable\_java} в \textit{false}.
 \subsection{Дополнения}
 \subsubsection{HTTPS Everywhere}
 HTTPS Everywhere --- дополнение для браузеров Firefox и Chrome/Chromium, переадресующее на HTTPS версию сайта, если она доступна. Это позволяет защититься от перехвата передаваемых данных, но не позволяет скрыть сам факт посещения вебсайта. Скачать дополнение можно тут \url{https://eff.org/https-everywhere}.
@@ -103,6 +114,12 @@ TrackMeNot --- дополнение для браузеров Firefox и Chrome/
 NoScript --- дополнение для браузера Firefox, позволяющее блокировать JavaScript, Flash, Java и другие элементы на недоверенных сайтах. Сайт: \url{http://noscript.net}.
 \subsubsection{RequestPolicy}
 RequestPolicy --- дополнение для браузера Firefox, позволяющее защититься от подделки межсайтовых запросов. Сайт: \url{https://requestpolicy.com}.
+\subsubsection{Cookie Monster}
+Cookie Monster --- дополнение для Firefox, позволяющее управлять разрешениями на использование Cookies, например, разрешать их использование только доверенным сайтам. Скачать: \url{https://addons.mozilla.org/firefox/addon/cookie-monster/}.
+\subsubsection{ipFlood}
+ipFlood --- дополнение для Firefox, симулирующее использование прокси путем добавления случайных IP-адресов в заголовки X-Forwarded-For, Client-IP и Via. Скачать: \url{https://addons.mozilla.org/firefox/addon/ipflood/}.
+\subsubsection{IPFuck}
+IPFuck --- дополнение для Firefox, аналогичное ipFlood. Сайт: \url{http://ipfuck.paulds.fr/}.
 \subsection{Плагины}
 Сам факт наличия каких-либо редкоиспользуемых плагинов увеличивает уникальность вашего браузера. Также некоторые плагины, например Java, передают ваш настоящий IP адрес, даже если вы за прокси.
 
