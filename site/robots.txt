@@ -1,0 +1,6 @@
+User-Agent: *
+Disallow:
+Sitemap: https://anonhandbook.org/sitemap.xml
+
+User-Agent: Yandex
+Host: anonhandbook.org
