@@ -14,6 +14,7 @@
 \usepackage{xcolor,mdframed}
 \usepackage{subfigure}
 \usepackage{textcomp}
+\usepackage{soul}
 \usepackage{multibib}
 \newcites{further}{Дальнейшее чтение}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -71,7 +72,6 @@
 \input{./chap7.tex}
 
 \newpage
-\cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{Дальнейшее чтение}
 \bibliographystylefurther{gost2008}
@@ -79,6 +79,7 @@
 \bibliographyfurther{further}
 
 \newpage
+\small
 \bibliographystyle{gost2008}
 \bibliography{bibliography}
 
