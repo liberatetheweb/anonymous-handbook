@@ -5,9 +5,9 @@
 \usepackage[dvips]{graphicx}
 \usepackage[unicode=true]{hyperref}
 \usepackage[cm-default]{fontspec}
-\usepackage{xunicode}
-\usepackage{xltxtra}
 \usepackage{polyglossia}
+\usepackage{xltxtra}
+\usepackage{xunicode}
 \usepackage{wrapfig}
 \usepackage{listings}
 \usepackage{color}
@@ -29,7 +29,8 @@
   breakatwhitespace=true, 
   keywordstyle=\color{blue},
   commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve} 
+  stringstyle=\color{mauve},
+  basicstyle=\ttfamily
 }
 \newenvironment{important}[1][]{%
    \begin{mdframed}[%
@@ -46,6 +47,7 @@
       }%
    }%
 }{\end{mdframed}}
+
 \defaultfontfeatures{Mapping=tex-text}
 \setmainfont{Liberation Serif}
 \newfontfamily\cyrillicfont{Liberation Serif}
