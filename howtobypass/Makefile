@@ -1,7 +1,6 @@
 all:
 	xelatex --jobname=HowToBypassGreatFirewallOfRussia howtobypass.tex
-	exiftool -overwrite_original -all= -Title="Обходим Великий Российский Файрволл" -Author="Anonymous" -AttributionURL="http://anonhandbook.org" -License="CC0 1.0"
--URL="http://anonhandbook.org" HowToBypassGreatFirewallOfRussia.pdf
+	exiftool -overwrite_original -all= -Title="Обходим Великий Российский Файрволл" -Author="Anonymous" -AttributionURL="http://anonhandbook.org" -License="CC0 1.0" -URL="http://anonhandbook.org" HowToBypassGreatFirewallOfRussia.pdf
 forsite:
 	xelatex --jobname=HowToBypassGreatFirewallOfRussia howtobypass.tex
 	exiftool -overwrite_original -all= -Title="Обходим Великий Российский Файрволл" -Author="Anonymous" -AttributionURL="http://anonhandbook.org" -License="http://creativecommons.org/publicdomain/zero/1.0/" -URL="http://anonhandbook.org" HowToBypassGreatFirewallOfRussia.pdf
