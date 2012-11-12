@@ -10,3 +10,4 @@
 *.torrent
 *.epub
 *.7z
+site/blacklist/index.html
