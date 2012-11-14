@@ -1,6 +1,7 @@
 User-Agent: *
-Disallow:
-Sitemap: https://anonhandbook.org/sitemap.xml
+Disallow: /files/key.gpg
+Sitemap: http://anonhandbook.org/sitemap.xml
 
 User-Agent: Yandex
+Disallow:
 Host: anonhandbook.org
