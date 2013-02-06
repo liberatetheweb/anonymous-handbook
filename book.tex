@@ -1,13 +1,12 @@
 \documentclass[unicode,a4paper,12pt,russian,openany]{book}
-\usepackage{cmap}
 \usepackage[left=1.5cm,right=1.5cm,
     top=1.5cm,bottom=1.5cm,bindingoffset=0cm]{geometry}
 \usepackage[dvips]{graphicx}
 \usepackage[unicode=true]{hyperref}
-\usepackage[cm-default]{fontspec}
+\usepackage{fontspec}
 \usepackage{polyglossia}
-\usepackage{xltxtra}
 \usepackage{xunicode}
+\usepackage{xltxtra}
 \usepackage{wrapfig}
 \usepackage{listings}
 \usepackage{color}
@@ -17,6 +16,7 @@
 \usepackage{soul}
 \usepackage{multibib}
 \usepackage{alltt}
+\usepackage{setspace}
 \newcites{further}{Дальнейшее чтение}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{mauve}{rgb}{0.58,0,0.82} 
@@ -53,11 +53,12 @@
 
 \defaultfontfeatures{Mapping=tex-text}
 \setmainfont{Liberation Serif}
-\newfontfamily\cyrillicfont{Liberation Serif}
+\newfontfamily\cyrillicfonttt{Liberation Serif}
 \setmonofont{Liberation Mono}
 \newfontfamily\cyrillicfonttt{Liberation Mono}
 \setsansfont{Liberation Sans}
-\newfontfamily\cyrillicfont{Liberation Sans}
+\newfontfamily\cyrillicfonttt{Liberation Sans}
+\setmainlanguage{russian}
 \setdefaultlanguage[spelling=modern]{russian}
 \setotherlanguage{english}
 \setcounter{tocdepth}{3}
@@ -66,7 +67,9 @@
 
 \input{./title.tex}
 
+\begin{spacing}{0.9}
 \tableofcontents
+\end{spacing}
 
 \input{./chap1.tex}
 \input{./chap2.tex}
@@ -86,8 +89,10 @@
 
 \newpage
 \small
+\begin{spacing}{0.9}
 \bibliographystyle{gost2008}
 \bibliography{bibliography}
+\end{spacing}
 
 \newpage
 \input{./end.tex}
